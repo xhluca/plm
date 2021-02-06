@@ -14,7 +14,6 @@ def create_venv(path):
 
 
 def pip_install(packages):
-    print(sys.executable)
     return subprocess.check_call([sys.executable, "-m", "pip", "install", *packages])
 
 
@@ -85,6 +84,9 @@ def _default(_):
 
 
 def main():
+    print(sys.executable)
+    print(sys.prefix)
+    print(os.getenv('VIRTUAL_ENV'))
     parser = argparse.ArgumentParser(
         "Like npm, but for python and using pip/venv", usage="plm <command> [<args>]"
     )
