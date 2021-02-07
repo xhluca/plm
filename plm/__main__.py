@@ -1,4 +1,5 @@
 import argparse
+import os
 
 from .__init__ import (
     pip_install,
@@ -13,13 +14,18 @@ from .__init__ import (
 
 def _install(args):
     if len(args.packages) == 0 and args.requirements is not None:
-        pip_install(['-r', args.requirements])
+        pip_install(["-r", args.requirements])
     elif len(args.packages) >= 1:
         pip_install(args.packages)
         store_dependencies(args.packages)
         pip_freeze()
     else:
-        raise ValueError("You will need to specify at least one library to install")
+        for filename in ['dependencies.txt','requirements.txt']:
+            if os.path.exists(filename):
+                pip_install(['-r', filename])
+                print(f"Installed all libraries specified in {filename}")
+                return
+        raise ValueError("Could not find a file named dependencies.txt or requirements.txt, aborting.")
 
 
 def _uninstall(args):
@@ -30,7 +36,7 @@ def _uninstall(args):
 
 def _create(args):
     create_venv(args.path)
-    
+
 
 def _activate(args):
     activate_venv(args.path)
