@@ -20,7 +20,7 @@ plm install requests numpy
 # also works: plm i requests numpy
 ```
 
-Now `requests` and `numpy` will be installed in your `venv/` and they will also be added to `dependencies.txt` and `requirements.txt`. If you don't specify anything by running `plm i`, `plm` will install the libraries specified in `dependencies.txt`, or fall back to `requirements.txt` if the former does not exist.
+Now `requests` and `numpy` will be installed in your `venv/` and they will also be added to `dependencies.txt` and `requirements.txt`.
 
 
 ## Why would I need `plm`?
@@ -84,6 +84,12 @@ You can also install from a file:
 ```bash
 plm i -r requirements.txt
 ```
+
+If you don't specify anything by running 
+```bash
+plm i
+```
+`plm` will install the libraries specified in `dependencies.txt`, or fall back to `requirements.txt` if the former does not exist.
 
 
 ## dependencies.txt vs requirements.txt
