@@ -5,7 +5,7 @@
 ## Quickstart
 
 ```bash
-pip3 install git+https://github.com/xhlulu/plm.git
+pip install git+https://github.com/xhlulu/plm.git
 ```
 
 Create and activate an environment:
@@ -27,13 +27,13 @@ Now `requests` and `numpy` will be installed in your `venv/` and they will also 
 
 Traditionally, to create an environment and activate it:
 ```bash
-python3 -m venv venv
+python -m venv venv
 source venv/bin/activate
 ```
 
 Then, to install a library and track dependencies:
 ```bash
-pip3 install requests numpy
+pip install requests numpy
 echo -e "requests\nnumpy" >> dependencies.txt
 pip freeze > requirements.txt
 ```
