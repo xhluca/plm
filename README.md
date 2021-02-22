@@ -5,7 +5,7 @@
 ## Quickstart
 
 ```bash
-pip install git+https://github.com/xhlulu/plm.git
+pip install git+https://git.io/plm.git
 ```
 
 Create and activate an environment:
