@@ -20,7 +20,7 @@ plm install requests numpy
 # also works: plm i requests numpy
 ```
 
-Now `requests` and `numpy` will be installed in your `venv/` and they will also be added to `dependencies.txt` and `requirements.txt`.
+Now `requests` and `numpy` will be installed in your `venv/` and they will also be added to `requirements-dev.txt` and `requirements.txt`.
 
 
 ## Why would I need `plm`?
@@ -34,7 +34,7 @@ source venv/bin/activate
 Then, to install a library and track dependencies:
 ```bash
 pip install requests numpy
-echo -e "requests\nnumpy" >> dependencies.txt
+echo -e "requests\nnumpy" >> requirements-dev.txt
 pip freeze > requirements.txt
 ```
 
@@ -59,7 +59,7 @@ git clone https://github.com/username/project.git
 cd project/
 python -m venv venv
 /bin/bash --rcfile venv/bin/activate  # slighly different from source <script>
-pip install -r dependencies.txt  # or requirements.txt
+pip install -r requirements-dev.txt  # or requirements.txt
 ```
 
 
@@ -89,12 +89,12 @@ If you don't specify anything by running
 ```bash
 plm i
 ```
-`plm` will install the libraries specified in `dependencies.txt`, or fall back to `requirements.txt` if the former does not exist.
+`plm` will install the libraries specified in `requirements-dev.txt`, or fall back to `requirements.txt` if the former does not exist.
 
 
-## dependencies.txt vs requirements.txt
+## requirements-dev.txt vs requirements.txt
 
-`dependencies.txt` loosely keeps track of your packages, which is good for readability and upgradability. It will be updated every time you pip install a package, e.g. if you run `plm install <package 1> <package 2>` then it will look like this:
+`requirements-dev.txt` loosely keeps track of your packages, which is good for readability and upgradability. It will be updated every time you pip install a package, e.g. if you run `plm install <package 1> <package 2>` then it will look like this:
 ```
 <old package 1>
 ...

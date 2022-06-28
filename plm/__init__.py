@@ -80,7 +80,7 @@ def pip_freeze(filename="./requirements.txt"):
         f.write(frozen)
 
 
-def store_dependencies(libraries: list, filename="./dependencies.txt"):
+def store_dependencies(libraries: list, filename="./requirements-dev.txt"):
     dependencies = read_dependencies(filename)
     deps_dict = deps_to_dict(dependencies)
     libraries_dict = deps_to_dict(libraries)
@@ -89,7 +89,7 @@ def store_dependencies(libraries: list, filename="./dependencies.txt"):
     write_dependencies(new_dependencies, filename)
 
 
-def remove_dependencies(libraries: list, filename="./dependencies.txt"):
+def remove_dependencies(libraries: list, filename="./requirements-dev.txt"):
     dependencies = read_dependencies(filename)
     deps_dict = deps_to_dict(dependencies)
     libraries_dict = deps_to_dict(libraries)
